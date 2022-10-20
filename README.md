@@ -1,6 +1,6 @@
 ![image](images/microchip.jpg) 
 
-## %repoDescritpion%
+## dspic33c curiosity nano oob demo
 
 Board Image if any.
 
