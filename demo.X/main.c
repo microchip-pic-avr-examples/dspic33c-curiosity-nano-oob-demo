@@ -96,9 +96,6 @@ void UartInit(void)
     //DEBUGGER USB RX/TX TEST - FOR OOB DEMO EFFORT
     RPOR13bits.RP58R = 1;
     RPINR18bits.U1RXR = 59;
-    
-//    RPOR2bits.RP36R = 1;
-//    RPINR18bits.U1RXR = 47;
 }
 
 void UartSendByte(char data)
