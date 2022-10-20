@@ -79,7 +79,8 @@
 #include <libpic30.h>
 
 
-void UartInit(void){
+void UartInit(void)
+{
     U1MODE = 0;
     U1MODEH = 0;    
     U1STA = 0;
@@ -102,38 +103,60 @@ void UartInit(void){
 
 void UartSendByte(char data)
 {
-while (U1STAbits.TRMT == 0); // wait for room in TX buffer
-U1TXREG = data;
+    while (U1STAbits.TRMT == 0)
+    {
+    } // wait for room in TX buffer
+
+    U1TXREG = data;
 } 
 
 void UartSendString(char *pData)
 {
-unsigned int x = 0;
-while(pData[x] != 0) {UartSendByte(pData[x]); x = x + 1;}
-} //
+    unsigned int x = 0;
 
-
-
-main() {
-_ANSELD13 = 0; //make RD13 a digital input
-_CNPUD13 = 1; //turn on internal pull up for RD13 
-_TRISD13 = 1; //RD13 an input 
-_TRISD10 = 0; // make trisd10 an output
-char data2[] = "dsPIC33CK64MC105 Curiosity Nano Demo. Please press on-board button to initiate demo.\n\r";
-char data[] = "\n Button pressed! Enjoy the blink. \n\r";
-char data1[] = "\n Button not pressed... please press to observe blink. \n\r";
-UartInit();
-
-
-
-while(PORTDbits.RD13 != 0){UartSendString(data2);__delay_ms(1000);_LATD10 = 1;};
-
-while(1)
-{
-    
-if(PORTDbits.RD13 == 0){LATDbits.LATD10 = 0; UartSendString(data);__delay_ms(1000);}
-else{LATDbits.LATD10 = 1; UartSendString(data1);__delay_ms(1000);}
+    while(pData[x] != 0)
+    {
+        UartSendByte(pData[x]);
+        x = x + 1;
+    }
 }
+
+
+int main(void)
+{
+    char data2[] = "dsPIC33CK64MC105 Curiosity Nano Demo. Please press on-board button to initiate demo.\n\r";
+    char data[] = "\n Button pressed! Enjoy the blink. \n\r";
+    char data1[] = "\n Button not pressed... please press to observe blink. \n\r";
+
+    _ANSELD13 = 0; //make RD13 a digital input
+    _CNPUD13 = 1; //turn on internal pull up for RD13 
+    _TRISD13 = 1; //RD13 an input 
+    _TRISD10 = 0; // make trisd10 an output
+
+    UartInit();
+
+    while(PORTDbits.RD13 != 0)
+    {
+        UartSendString(data2);
+        __delay_ms(1000);
+        _LATD10 = 1;
+    }
+
+    while(1)
+    {
+        if(PORTDbits.RD13 == 0)
+        {
+            LATDbits.LATD10 = 0;
+            UartSendString(data);
+            __delay_ms(1000);
+        }
+        else
+        {
+            LATDbits.LATD10 = 1;
+            UartSendString(data1);
+            __delay_ms(1000);
+        }
+    }
 } 
     
     
