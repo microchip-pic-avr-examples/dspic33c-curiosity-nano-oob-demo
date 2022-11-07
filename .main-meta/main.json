@@ -4,7 +4,7 @@
    "content":{
       "metaDataVersion":"1.3.0",
       "name":"com.microchip.mplabx.project.dspic33c-curiosity-nano-oob-demo",
-      "version":"x.x.x",
+      "version":"1.0.0",
       "displayName":"dsPIC33CK64MC105 Curiosity Nano Development Board Out-of-the-box Demo",
       "projectName":"dspic33c-curiosity-nano-oob-demo",
       "shortDescription":"Out-of-the-box demo software for the dsPIC33CK64MC105 Curiosity Nano Development Board",
