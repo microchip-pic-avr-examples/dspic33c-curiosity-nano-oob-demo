@@ -10,15 +10,15 @@
       "shortDescription":"Out-of-the-box demo software for the dsPIC33CK64MC105 Curiosity Nano Development Board",
       "ide":{
          "name":"MPLABX",
-         "semverRange":">=5.40.0"
+         "semverRange":">=6.05.0"
       },
       "compiler":{
          "name":"XC16",
-         "semverRange":"^1.50.0"
+         "semverRange":"^1.90.0"
       },
       "dfp":{
          "name":"dsPIC33CK-MC-DFP",
-         "semverRange":">=x.x.x"
+         "semverRange":">=1.6.131"
       },
 	  "configurator": {
          "name": "MCC",
