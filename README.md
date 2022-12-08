@@ -1,6 +1,6 @@
 ## dspic33c curiosity nano oob demo
 
-![image](images\220920-MC16-PHOTO-EV88G73A-Front-Transparent.png)
+![image](images/220920-MC16-PHOTO-EV88G73A-Front-Transparent.png)
 
 ## Summary
 Initial message is displayed to serial terminal on power up when board is connected to PC via USB port, "dsPIC33CK64MC105 Curiosity Nano Demo. Please press on-board button to initiate demo."
@@ -22,12 +22,15 @@ For programming/debugging and to run the demo, connect a USB cable to the USB co
 
 ## Operation
 On power-up, the below message will print to the terminal. Press button once to initiate demo. 
-![image](images\welcome-33CK-c-nano.png)
+
+![image](images/welcome-33CK-c-nano.png)
 
 While button is pressed, demo begins and below message will print:
-![image](images\button-press-33CK-c-nano.png)
+
+![image](images/button-press-33CK-c-nano.png)
 
 And when button is not pressed, below message will print to the terminal:
-![image](images\no-press-33CK-c-nano.png)
+
+![image](images/no-press-33CK-c-nano.png)
 
 
